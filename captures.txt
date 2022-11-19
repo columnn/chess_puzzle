@@ -1,0 +1,180 @@
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), b1(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), c1(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), d1(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), e1(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), f1(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), g1(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), h1(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), a2(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), a3(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), a4(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), a5(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), a6(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), a7(Y, S).
+capture(piece(rook,Color,N), Y, S) :- a1(piece(rook, Color, N), S), a8(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- a1(piece(bishop, Color, N), S), b2(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- a1(piece(bishop, Color, N), S), c3(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- a1(piece(bishop, Color, N), S), d4(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- a1(piece(bishop, Color, N), S), e5(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- a1(piece(bishop, Color, N), S), f6(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- a1(piece(bishop, Color, N), S), g7(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- a1(piece(bishop, Color, N), S), h8(Y, S).
+capture(piece(king,Color), Y, S) :- a1(piece(king, Color), S), a2(Y, S).
+capture(piece(king,Color), Y, S) :- a1(piece(king, Color), S), b1(Y, S).
+capture(piece(king,Color), Y, S) :- a1(piece(king, Color), S), b2(Y, S).
+capture(piece(knight,Color, N), Y, S) :- a1(piece(knight, Color, N), S), c2(Y, S).
+capture(piece(knight,Color, N), Y, S) :- a1(piece(knight, Color, N), S), b3(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), b1(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), c1(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), d1(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), e1(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), f1(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), g1(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), h1(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), a2(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), a3(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), a4(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), a5(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), a6(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), a7(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), a8(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), b2(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), c3(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), d4(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), e5(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), f6(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), g7(Y, S).
+capture(piece(queen,Color), Y, S) :- a1(piece(queen, Color), S), h8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- a1(piece(pawn, white, N), S), b2(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), a4(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), b4(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), c4(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), d4(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), e4(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), g4(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), h4(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), f1(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), f2(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), f3(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), f5(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), f6(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), f7(Y, S).
+capture(piece(rook,Color,N), Y, S) :- f4(piece(rook, Color, N), S), f8(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- f4(piece(bishop, Color, N), S), g5(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- f4(piece(bishop, Color, N), S), g3(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- f4(piece(bishop, Color, N), S), e5(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- f4(piece(bishop, Color, N), S), e3(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- f4(piece(bishop, Color, N), S), h6(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- f4(piece(bishop, Color, N), S), h2(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- f4(piece(bishop, Color, N), S), d6(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- f4(piece(bishop, Color, N), S), d2(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- f4(piece(bishop, Color, N), S), c7(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- f4(piece(bishop, Color, N), S), c1(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- f4(piece(bishop, Color, N), S), b8(Y, S).
+capture(piece(king,Color), Y, S) :- f4(piece(king, Color), S), e3(Y, S).
+capture(piece(king,Color), Y, S) :- f4(piece(king, Color), S), e4(Y, S).
+capture(piece(king,Color), Y, S) :- f4(piece(king, Color), S), e5(Y, S).
+capture(piece(king,Color), Y, S) :- f4(piece(king, Color), S), f3(Y, S).
+capture(piece(king,Color), Y, S) :- f4(piece(king, Color), S), f5(Y, S).
+capture(piece(king,Color), Y, S) :- f4(piece(king, Color), S), g3(Y, S).
+capture(piece(king,Color), Y, S) :- f4(piece(king, Color), S), g4(Y, S).
+capture(piece(king,Color), Y, S) :- f4(piece(king, Color), S), g5(Y, S).
+capture(piece(knight,Color, N), Y, S) :- f4(piece(knight, Color, N), S), h3(Y, S).
+capture(piece(knight,Color, N), Y, S) :- f4(piece(knight, Color, N), S), h5(Y, S).
+capture(piece(knight,Color, N), Y, S) :- f4(piece(knight, Color, N), S), g2(Y, S).
+capture(piece(knight,Color, N), Y, S) :- f4(piece(knight, Color, N), S), e2(Y, S).
+capture(piece(knight,Color, N), Y, S) :- f4(piece(knight, Color, N), S), d3(Y, S).
+capture(piece(knight,Color, N), Y, S) :- f4(piece(knight, Color, N), S), d5(Y, S).
+capture(piece(knight,Color, N), Y, S) :- f4(piece(knight, Color, N), S), e6(Y, S).
+capture(piece(knight,Color, N), Y, S) :- f4(piece(knight, Color, N), S), g6(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), a4(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), b4(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), c4(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), d4(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), e4(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), g4(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), h4(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), f1(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), f2(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), f3(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), f5(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), f6(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), f7(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), f8(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), g5(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), g3(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), e5(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), e3(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), h6(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), h2(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), d6(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), d2(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), c7(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), c1(Y, S).
+capture(piece(queen,Color), Y, S) :- f4(piece(queen, Color), S), b8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- f4(piece(pawn, white, N), S), g3(Y, S).
+capture(piece(pawn,white, N), Y, S) :- f4(piece(pawn, white, N), S), g5(Y, S).
+capture(piece(pawn,black, N), Y, S) :- f4(piece(pawn, black, N), S), e3(Y, S).
+capture(piece(pawn,black, N), Y, S) :- f4(piece(pawn, black, N), S), e5(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), a3(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), c3(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), d3(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), e3(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), f3(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), g3(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), h3(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), b1(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), b2(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), b4(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), b5(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), b6(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), b7(Y, S).
+capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), b8(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- b3(piece(bishop, Color, N), S), c4(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- b3(piece(bishop, Color, N), S), c2(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- b3(piece(bishop, Color, N), S), a4(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- b3(piece(bishop, Color, N), S), a2(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- b3(piece(bishop, Color, N), S), d5(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- b3(piece(bishop, Color, N), S), d1(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- b3(piece(bishop, Color, N), S), e6(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- b3(piece(bishop, Color, N), S), f7(Y, S).
+capture(piece(bishop,Color,N), Y, S) :- b3(piece(bishop, Color, N), S), g8(Y, S).
+capture(piece(king,Color), Y, S) :- b3(piece(king, Color), S), a2(Y, S).
+capture(piece(king,Color), Y, S) :- b3(piece(king, Color), S), a3(Y, S).
+capture(piece(king,Color), Y, S) :- b3(piece(king, Color), S), a4(Y, S).
+capture(piece(king,Color), Y, S) :- b3(piece(king, Color), S), b2(Y, S).
+capture(piece(king,Color), Y, S) :- b3(piece(king, Color), S), b4(Y, S).
+capture(piece(king,Color), Y, S) :- b3(piece(king, Color), S), c2(Y, S).
+capture(piece(king,Color), Y, S) :- b3(piece(king, Color), S), c3(Y, S).
+capture(piece(king,Color), Y, S) :- b3(piece(king, Color), S), c4(Y, S).
+capture(piece(knight,Color, N), Y, S) :- b3(piece(knight, Color, N), S), d2(Y, S).
+capture(piece(knight,Color, N), Y, S) :- b3(piece(knight, Color, N), S), d4(Y, S).
+capture(piece(knight,Color, N), Y, S) :- b3(piece(knight, Color, N), S), c1(Y, S).
+capture(piece(knight,Color, N), Y, S) :- b3(piece(knight, Color, N), S), a1(Y, S).
+capture(piece(knight,Color, N), Y, S) :- b3(piece(knight, Color, N), S), a5(Y, S).
+capture(piece(knight,Color, N), Y, S) :- b3(piece(knight, Color, N), S), c5(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), a3(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), c3(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), d3(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), e3(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), f3(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), g3(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), h3(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), b1(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), b2(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), b4(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), b5(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), b6(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), b7(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), b8(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), c4(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), c2(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), a4(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), a2(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), d5(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), d1(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), e6(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), f7(Y, S).
+capture(piece(queen,Color), Y, S) :- b3(piece(queen, Color), S), g8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- b3(piece(pawn, white, N), S), c2(Y, S).
+capture(piece(pawn,white, N), Y, S) :- b3(piece(pawn, white, N), S), c4(Y, S).

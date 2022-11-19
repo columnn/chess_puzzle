@@ -1,1 +1,1 @@
-prolog chess
+prolog chess puzzle

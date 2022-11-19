@@ -1,0 +1,9 @@
+capture(piece(Which,Color,N),Y,S) :- a1(piece(Which,Color,N),S), d1(Y,S).
+
+capture(piece(rook,black,one), piece(rook, white, one), S).
+
+bishopAttack(N, Color, Y, S) :- c6(figure(bishop, Color, N), S), b5(Y, S). 8
+
+c(_1686,_1688,_1690,piece(pawn,white,one),piece(queen,white),piece(rook,white,one),piece(pawn,black,two),_536,_538,_540,_542,piece(queen,white),piece(queen,white),piece(rook,black,one),piece(pawn,white,three),_552,_554,_556,_558,piece(bishop,white,two),piece(king,black),piece(pawn,black,one),piece(rook,white,one),_568,_570,_572,_574,piece(bishop,black,two),piece(bishop,white,one),piece(king,white),piece(rook,black,one),piece(bishop,black,one),_586,_588,_590,piece(pawn,black,one),piece(rook,white,one),piece(knight,black,two),piece(bishop,white,two),_600,_602,_604,_606,piece(pawn,white,two),_610,piece(pawn,black,two),piece(bishop,white,two),_616,_618,_620,_622,_624,piece(pawn,white,three),piece(king,black),_630,piece(pawn,black,two),_634,_636,_638,_640,_642,_644,_646,_648)
+
+S = c(_, _, _, piece(pawn, white, one), _, piece(rook, white, one), piece(pawn, black, two), _, _, _, _, piece(queen, white), piece(queen, white), piece(rook, black, one), piece(pawn, white, three), _, _, _, _, piece(bishop, white, two), piece(king, black), piece(pawn, black, one), piece(rook, white, one), _, _, _, _, piece(bishop, black, two), piece(bishop, white, one), piece(king, white), piece(rook, black, one), piece(bishop, black, one), _, _, piece(rook, white, one), _, piece(knight, black, two), piece(pawn, black, one), piece(bishop, white, two), _, _, _, _, piece(pawn, white, two), _, piece(pawn, black, two), piece(bishop, white, two), _, _, _, _, piece(pawn, white, three), piece(queen, white), piece(king, black), _, piece(pawn, black, two), _, _, _, _, _, piece(pawn, white, three), _, _) 

@@ -85,7 +85,7 @@ def generate_captures(fields, file):
                 file.write(s)
 
         #knight
-        q = [(2,-1),(2,1),(1,-2),(-1,-2),(-2,-1),(-2,1),(-1,2),(1,2)]
+        q = [(1,2),(2,1),(2,-1),(1,-2),(-1,-2),(-2,-1),(-2,1),(-1,2)]
         for i, j in q:
             u = x + i
             v = y + j
@@ -152,9 +152,9 @@ def generate_captures(fields, file):
                     continue
                 s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
                 file.write(s)
+
         #pawn
-        
-        q_white = [(1,-1),(1,1)]
+        q_white = [(-1,1),(1,1)]
         for i, j in q_white:
             u = x + i
             v = y + j
@@ -169,7 +169,7 @@ def generate_captures(fields, file):
             s = f"capture(piece(pawn,white, N), Y, S) :- {field}(piece(pawn, white, N), S), {a}(Y, S).\n"
             file.write(s)
             
-        q_black = [(-1,-1),(-1,1)]
+        q_black = [(-1,-1),(1,-1)]
         for i, j in q_black:
             u = x + i
             v = y + j
@@ -184,15 +184,15 @@ def generate_captures(fields, file):
             s = f"capture(piece(pawn,black, N), Y, S) :- {field}(piece(pawn, black, N), S), {a}(Y, S).\n"
             file.write(s)
 
-def generate_fields2(fields, file):
+def generate_fields(fields, file):
     for field in fields:
         x, y = [*field]
-        x = abs(ord(x) - 104)
-        y = int(y) - 1
+        x = ord(x) - 97
+        y = abs(int(y) - 8)
         s = f"{field}(X, c("
         for i in range(8):
             for j in range(8):
-                if(i==x and j==y):
+                if(i==y and j==x):
                     s+="X,"
                 else:
                     s+="_,"
@@ -203,7 +203,7 @@ def generate_fields2(fields, file):
                 s += '\n\t\t'
         file.write(s)
         
-def generate_fields(file):
+def generate_fields2(file):
     for x in range(8):
         for y in range(8):
             s = f"{chr(x+97)}{y+1}(X, c("
@@ -252,10 +252,11 @@ def generate_edges(fields, file):
 
 def main():
     f = ['b5','b6','b7','c5','c6','c7','d4','d5','d6','d8','e5','e6','f4','f6','f7']
-
+    #f = ['a1','a2','a3','a4','a5','a6','a7','a8']
+    #f = ['a1','a8','h1','h8']
     file = open('predykaty.txt', 'w')
 
-    generate_fields2(f, file)
+    generate_fields(f, file)
     file.write('\n')
 
     generate_captures(f, file)

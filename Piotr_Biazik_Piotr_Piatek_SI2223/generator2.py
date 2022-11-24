@@ -13,68 +13,53 @@ def generate_captures(fields, file):
         x, y = [*field]
         x = ord(x) - 97
         y = int(y) - 1
-
-        east = south = west = north = True
         
         #rook
-        for i in range(x+1,8):
+        for i in range(8):
+            if(i == x):
+                continue
             a = f"{chr(i+97)}{y+1}"
-            if a in fields and east:
-                s = f"capture(piece(rook,Color,N), Y, S) :- {field}(piece(rook, Color, N), S), {a}(Y, S).\n" #, isempty(a4), isempty(a5)
-                file.write(s)
-                east = False
-        for i in range(y-1,-1,-1):
+            if a not in fields:
+                continue
+            s = f"capture(piece(rook,Color,N), Y, S) :- {field}(piece(rook, Color, N), S), {a}(Y, S).\n" #, isempty(a4), isempty(a5)
+            file.write(s)
+        for i in range(8):
+            if(i == y):
+                continue
             a = f"{chr(x+97)}{i+1}"
-            if a in fields and south:
-                s = f"capture(piece(rook,Color,N), Y, S) :- {field}(piece(rook, Color, N), S), {a}(Y, S).\n" #, isempty(a4), isempty(a5)
-                file.write(s)
-                south = False
-        for i in range(x-1,-1,-1):
-            a = f"{chr(i+97)}{y+1}"
-            if a in fields and west:
-                s = f"capture(piece(rook,Color,N), Y, S) :- {field}(piece(rook, Color, N), S), {a}(Y, S).\n" #, isempty(a4), isempty(a5)
-                file.write(s)
-                west = False
-        for i in range(y+1,8):
-            a = f"{chr(x+97)}{i+1}"
-            if a in fields and north:
-                s = f"capture(piece(rook,Color,N), Y, S) :- {field}(piece(rook, Color, N), S), {a}(Y, S).\n" #, isempty(a4), isempty(a5)
-                file.write(s)
-                north = False
+            if a not in fields:
+                continue
+            s = f"capture(piece(rook,Color,N), Y, S) :- {field}(piece(rook, Color, N), S), {a}(Y, S).\n"
+            file.write(s)
 
         #bishop
-        ne = se = nw = sw = True
         for i in range(1, 8):
             x2 = x+i
             y2 = y+i
             if (0 <= x2 <=7 and 0 <= y2 <=7):
                 a = f"{chr(x2+97)}{y2+1}"
-                if a in fields and ne:
-                    ne = False
+                if a in fields:
                     s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
                     file.write(s)
             x2 = x+i
             y2 = y-i
             if (0 <= x2 <=7 and 0 <= y2 <=7):
                 a = f"{chr(x2+97)}{y2+1}"
-                if a in fields and se:
-                    se = False
+                if a in fields:
                     s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
                     file.write(s)
             x2 = x-i
             y2 = y+i
             if (0 <= x2 <=7 and 0 <= y2 <=7):
                 a = f"{chr(x2+97)}{y2+1}"
-                if a in fields and nw:
-                    nw = False
+                if a in fields:
                     s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
                     file.write(s)
             x2 = x-i
             y2 = y-i
             if(0 <= x2 <=7 and 0 <= y2 <=7):
                 a = f"{chr(x2+97)}{y2+1}"
-                if a in fields and sw:
-                    sw = False
+                if a in fields:
                     s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
                     file.write(s)
 
@@ -254,14 +239,13 @@ def generate_edges(fields, file):
         if(x == 'a' or x == 'h' or y == '1' or y == '8'):
             s = f"edge(X, S) :- {field}(X, S).\n"
             file.write(s)
-            
 
 def main():
     f = ['b5','b6','b7','c5','c6','c7','d4','d5','d6','d8','e5','e6','f4','f6','f7']
     #f = ['a1','a2','a3','a4','a5','a6','a7','a8','a1','a2','a3','a4','a5','a6','a7','a8','a1','a2','a3','a4','a5','a6','a7','a8'
     #   ,'a1','a2','a3','a4','a5','a6','a7','a8','a1','a2','a3','a4','a5','a6','a7','a8']
     #f = ['a1','a8','h1','h8']
-    file = open('predykaty3.txt', 'w')
+    file = open('predykaty_all.txt', 'w')
 
     all_fields = []
     for i in range(97, 105):
@@ -269,16 +253,17 @@ def main():
             all_fields.append(f"{chr(i)}{j}")
 
     
-    generate_fields(f, file)
+    generate_fields(all_fields, file)
     file.write('\n')
 
-    generate_captures(f, file)
+    generate_captures(all_fields, file)
     file.write('\n')
 
-    generate_edges(f, file)
+    generate_edges(all_fields, file)
     file.write('\n')
 
-    generate_arounds(f, file)
+    generate_arounds(all_fields, file)
+
     
     file.close()
     

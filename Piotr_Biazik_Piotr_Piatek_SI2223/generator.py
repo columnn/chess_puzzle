@@ -38,34 +38,30 @@ def generate_captures(fields, file):
             y2 = y+i
             if (0 <= x2 <=7 and 0 <= y2 <=7):
                 a = f"{chr(x2+97)}{y2+1}"
-                if a not in fields:
-                    continue
-                s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
-                file.write(s)
+                if a in fields:
+                    s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
+                    file.write(s)
             x2 = x+i
             y2 = y-i
             if (0 <= x2 <=7 and 0 <= y2 <=7):
                 a = f"{chr(x2+97)}{y2+1}"
-                if a not in fields:
-                    continue
-                s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
-                file.write(s)
+                if a in fields:
+                    s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
+                    file.write(s)
             x2 = x-i
             y2 = y+i
             if (0 <= x2 <=7 and 0 <= y2 <=7):
                 a = f"{chr(x2+97)}{y2+1}"
-                if a not in fields:
-                    continue
-                s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
-                file.write(s)
+                if a in fields:
+                    s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
+                    file.write(s)
             x2 = x-i
             y2 = y-i
             if(0 <= x2 <=7 and 0 <= y2 <=7):
                 a = f"{chr(x2+97)}{y2+1}"
-                if a not in fields:
-                    continue
-                s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
-                file.write(s)
+                if a in fields:
+                    s = f"capture(piece(bishop,Color,N), Y, S) :- {field}(piece(bishop, Color, N), S), {a}(Y, S).\n"
+                    file.write(s)
 
         #king
         for i in range(3):
@@ -95,10 +91,9 @@ def generate_captures(fields, file):
             if not(0 <= v <= 7):
                 continue
             a = f"{chr(u+97)}{v+1}"
-            if a not in fields:
-                continue
-            s = f"capture(piece(knight,Color, N), Y, S) :- {field}(piece(knight, Color, N), S), {a}(Y, S).\n"
-            file.write(s)
+            if a in fields:
+                s = f"capture(piece(knight,Color, N), Y, S) :- {field}(piece(knight, Color, N), S), {a}(Y, S).\n"
+                file.write(s)
         
         #queen
 

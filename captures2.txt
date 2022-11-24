@@ -24,7 +24,6 @@ capture(piece(king,Color), Y, S) :- a1(piece(king, Color), S), b1(Y, S).
 capture(piece(king,Color), Y, S) :- a1(piece(king, Color), S), b2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- a1(piece(knight, Color, N), S), b3(Y, S).
 capture(piece(knight,Color, N), Y, S) :- a1(piece(knight, Color, N), S), c2(Y, S).
-capture(piece(pawn,white, N), Y, S) :- a1(piece(pawn, white, N), S), b2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- a2(piece(rook, Color, N), S), b2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- a2(piece(rook, Color, N), S), c2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- a2(piece(rook, Color, N), S), d2(Y, S).
@@ -55,6 +54,7 @@ capture(piece(knight,Color, N), Y, S) :- a2(piece(knight, Color, N), S), b4(Y, S
 capture(piece(knight,Color, N), Y, S) :- a2(piece(knight, Color, N), S), c3(Y, S).
 capture(piece(knight,Color, N), Y, S) :- a2(piece(knight, Color, N), S), c1(Y, S).
 capture(piece(pawn,white, N), Y, S) :- a2(piece(pawn, white, N), S), b3(Y, S).
+capture(piece(pawn,black, N), Y, S) :- a2(piece(pawn, black, N), S), b1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- a3(piece(rook, Color, N), S), b3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- a3(piece(rook, Color, N), S), c3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- a3(piece(rook, Color, N), S), d3(Y, S).
@@ -212,6 +212,7 @@ capture(piece(king,Color), Y, S) :- a7(piece(king, Color), S), b8(Y, S).
 capture(piece(knight,Color, N), Y, S) :- a7(piece(knight, Color, N), S), c8(Y, S).
 capture(piece(knight,Color, N), Y, S) :- a7(piece(knight, Color, N), S), c6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- a7(piece(knight, Color, N), S), b5(Y, S).
+capture(piece(pawn,white, N), Y, S) :- a7(piece(pawn, white, N), S), b8(Y, S).
 capture(piece(pawn,black, N), Y, S) :- a7(piece(pawn, black, N), S), b6(Y, S).
 capture(piece(rook,Color,N), Y, S) :- a8(piece(rook, Color, N), S), b8(Y, S).
 capture(piece(rook,Color,N), Y, S) :- a8(piece(rook, Color, N), S), c8(Y, S).
@@ -239,7 +240,6 @@ capture(piece(king,Color), Y, S) :- a8(piece(king, Color), S), b7(Y, S).
 capture(piece(king,Color), Y, S) :- a8(piece(king, Color), S), b8(Y, S).
 capture(piece(knight,Color, N), Y, S) :- a8(piece(knight, Color, N), S), c7(Y, S).
 capture(piece(knight,Color, N), Y, S) :- a8(piece(knight, Color, N), S), b6(Y, S).
-capture(piece(pawn,black, N), Y, S) :- a8(piece(pawn, black, N), S), b7(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b1(piece(rook, Color, N), S), a1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b1(piece(rook, Color, N), S), c1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b1(piece(rook, Color, N), S), d1(Y, S).
@@ -269,7 +269,6 @@ capture(piece(king,Color), Y, S) :- b1(piece(king, Color), S), c2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b1(piece(knight, Color, N), S), c3(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b1(piece(knight, Color, N), S), d2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b1(piece(knight, Color, N), S), a3(Y, S).
-capture(piece(pawn,white, N), Y, S) :- b1(piece(pawn, white, N), S), c2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b2(piece(rook, Color, N), S), a2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b2(piece(rook, Color, N), S), c2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b2(piece(rook, Color, N), S), d2(Y, S).
@@ -305,7 +304,10 @@ capture(piece(knight,Color, N), Y, S) :- b2(piece(knight, Color, N), S), c4(Y, S
 capture(piece(knight,Color, N), Y, S) :- b2(piece(knight, Color, N), S), d3(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b2(piece(knight, Color, N), S), d1(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b2(piece(knight, Color, N), S), a4(Y, S).
+capture(piece(pawn,white, N), Y, S) :- b2(piece(pawn, white, N), S), a3(Y, S).
 capture(piece(pawn,white, N), Y, S) :- b2(piece(pawn, white, N), S), c3(Y, S).
+capture(piece(pawn,black, N), Y, S) :- b2(piece(pawn, black, N), S), a1(Y, S).
+capture(piece(pawn,black, N), Y, S) :- b2(piece(pawn, black, N), S), c1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), a3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), c3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b3(piece(rook, Color, N), S), d3(Y, S).
@@ -343,7 +345,9 @@ capture(piece(knight,Color, N), Y, S) :- b3(piece(knight, Color, N), S), d2(Y, S
 capture(piece(knight,Color, N), Y, S) :- b3(piece(knight, Color, N), S), c1(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b3(piece(knight, Color, N), S), a1(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b3(piece(knight, Color, N), S), a5(Y, S).
+capture(piece(pawn,white, N), Y, S) :- b3(piece(pawn, white, N), S), a4(Y, S).
 capture(piece(pawn,white, N), Y, S) :- b3(piece(pawn, white, N), S), c4(Y, S).
+capture(piece(pawn,black, N), Y, S) :- b3(piece(pawn, black, N), S), a2(Y, S).
 capture(piece(pawn,black, N), Y, S) :- b3(piece(pawn, black, N), S), c2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b4(piece(rook, Color, N), S), a4(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b4(piece(rook, Color, N), S), c4(Y, S).
@@ -382,7 +386,9 @@ capture(piece(knight,Color, N), Y, S) :- b4(piece(knight, Color, N), S), d3(Y, S
 capture(piece(knight,Color, N), Y, S) :- b4(piece(knight, Color, N), S), c2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b4(piece(knight, Color, N), S), a2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b4(piece(knight, Color, N), S), a6(Y, S).
+capture(piece(pawn,white, N), Y, S) :- b4(piece(pawn, white, N), S), a5(Y, S).
 capture(piece(pawn,white, N), Y, S) :- b4(piece(pawn, white, N), S), c5(Y, S).
+capture(piece(pawn,black, N), Y, S) :- b4(piece(pawn, black, N), S), a3(Y, S).
 capture(piece(pawn,black, N), Y, S) :- b4(piece(pawn, black, N), S), c3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b5(piece(rook, Color, N), S), a5(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b5(piece(rook, Color, N), S), c5(Y, S).
@@ -421,7 +427,9 @@ capture(piece(knight,Color, N), Y, S) :- b5(piece(knight, Color, N), S), d4(Y, S
 capture(piece(knight,Color, N), Y, S) :- b5(piece(knight, Color, N), S), c3(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b5(piece(knight, Color, N), S), a3(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b5(piece(knight, Color, N), S), a7(Y, S).
+capture(piece(pawn,white, N), Y, S) :- b5(piece(pawn, white, N), S), a6(Y, S).
 capture(piece(pawn,white, N), Y, S) :- b5(piece(pawn, white, N), S), c6(Y, S).
+capture(piece(pawn,black, N), Y, S) :- b5(piece(pawn, black, N), S), a4(Y, S).
 capture(piece(pawn,black, N), Y, S) :- b5(piece(pawn, black, N), S), c4(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b6(piece(rook, Color, N), S), a6(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b6(piece(rook, Color, N), S), c6(Y, S).
@@ -460,7 +468,9 @@ capture(piece(knight,Color, N), Y, S) :- b6(piece(knight, Color, N), S), d5(Y, S
 capture(piece(knight,Color, N), Y, S) :- b6(piece(knight, Color, N), S), c4(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b6(piece(knight, Color, N), S), a4(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b6(piece(knight, Color, N), S), a8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- b6(piece(pawn, white, N), S), a7(Y, S).
 capture(piece(pawn,white, N), Y, S) :- b6(piece(pawn, white, N), S), c7(Y, S).
+capture(piece(pawn,black, N), Y, S) :- b6(piece(pawn, black, N), S), a5(Y, S).
 capture(piece(pawn,black, N), Y, S) :- b6(piece(pawn, black, N), S), c5(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b7(piece(rook, Color, N), S), a7(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b7(piece(rook, Color, N), S), c7(Y, S).
@@ -497,6 +507,9 @@ capture(piece(knight,Color, N), Y, S) :- b7(piece(knight, Color, N), S), d8(Y, S
 capture(piece(knight,Color, N), Y, S) :- b7(piece(knight, Color, N), S), d6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b7(piece(knight, Color, N), S), c5(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b7(piece(knight, Color, N), S), a5(Y, S).
+capture(piece(pawn,white, N), Y, S) :- b7(piece(pawn, white, N), S), a8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- b7(piece(pawn, white, N), S), c8(Y, S).
+capture(piece(pawn,black, N), Y, S) :- b7(piece(pawn, black, N), S), a6(Y, S).
 capture(piece(pawn,black, N), Y, S) :- b7(piece(pawn, black, N), S), c6(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b8(piece(rook, Color, N), S), a8(Y, S).
 capture(piece(rook,Color,N), Y, S) :- b8(piece(rook, Color, N), S), c8(Y, S).
@@ -527,7 +540,6 @@ capture(piece(king,Color), Y, S) :- b8(piece(king, Color), S), c8(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b8(piece(knight, Color, N), S), d7(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b8(piece(knight, Color, N), S), c6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- b8(piece(knight, Color, N), S), a6(Y, S).
-capture(piece(pawn,black, N), Y, S) :- b8(piece(pawn, black, N), S), c7(Y, S).
 capture(piece(rook,Color,N), Y, S) :- c1(piece(rook, Color, N), S), a1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- c1(piece(rook, Color, N), S), b1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- c1(piece(rook, Color, N), S), d1(Y, S).
@@ -558,8 +570,6 @@ capture(piece(knight,Color, N), Y, S) :- c1(piece(knight, Color, N), S), d3(Y, S
 capture(piece(knight,Color, N), Y, S) :- c1(piece(knight, Color, N), S), e2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- c1(piece(knight, Color, N), S), a2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- c1(piece(knight, Color, N), S), b3(Y, S).
-capture(piece(pawn,white, N), Y, S) :- c1(piece(pawn, white, N), S), b2(Y, S).
-capture(piece(pawn,white, N), Y, S) :- c1(piece(pawn, white, N), S), d2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- c2(piece(rook, Color, N), S), a2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- c2(piece(rook, Color, N), S), b2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- c2(piece(rook, Color, N), S), d2(Y, S).
@@ -599,6 +609,8 @@ capture(piece(knight,Color, N), Y, S) :- c2(piece(knight, Color, N), S), a3(Y, S
 capture(piece(knight,Color, N), Y, S) :- c2(piece(knight, Color, N), S), b4(Y, S).
 capture(piece(pawn,white, N), Y, S) :- c2(piece(pawn, white, N), S), b3(Y, S).
 capture(piece(pawn,white, N), Y, S) :- c2(piece(pawn, white, N), S), d3(Y, S).
+capture(piece(pawn,black, N), Y, S) :- c2(piece(pawn, black, N), S), b1(Y, S).
+capture(piece(pawn,black, N), Y, S) :- c2(piece(pawn, black, N), S), d1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- c3(piece(rook, Color, N), S), a3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- c3(piece(rook, Color, N), S), b3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- c3(piece(rook, Color, N), S), d3(Y, S).
@@ -816,6 +828,8 @@ capture(piece(knight,Color, N), Y, S) :- c7(piece(knight, Color, N), S), d5(Y, S
 capture(piece(knight,Color, N), Y, S) :- c7(piece(knight, Color, N), S), b5(Y, S).
 capture(piece(knight,Color, N), Y, S) :- c7(piece(knight, Color, N), S), a6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- c7(piece(knight, Color, N), S), a8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- c7(piece(pawn, white, N), S), b8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- c7(piece(pawn, white, N), S), d8(Y, S).
 capture(piece(pawn,black, N), Y, S) :- c7(piece(pawn, black, N), S), b6(Y, S).
 capture(piece(pawn,black, N), Y, S) :- c7(piece(pawn, black, N), S), d6(Y, S).
 capture(piece(rook,Color,N), Y, S) :- c8(piece(rook, Color, N), S), a8(Y, S).
@@ -848,8 +862,6 @@ capture(piece(knight,Color, N), Y, S) :- c8(piece(knight, Color, N), S), e7(Y, S
 capture(piece(knight,Color, N), Y, S) :- c8(piece(knight, Color, N), S), d6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- c8(piece(knight, Color, N), S), b6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- c8(piece(knight, Color, N), S), a7(Y, S).
-capture(piece(pawn,black, N), Y, S) :- c8(piece(pawn, black, N), S), b7(Y, S).
-capture(piece(pawn,black, N), Y, S) :- c8(piece(pawn, black, N), S), d7(Y, S).
 capture(piece(rook,Color,N), Y, S) :- d1(piece(rook, Color, N), S), a1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- d1(piece(rook, Color, N), S), b1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- d1(piece(rook, Color, N), S), c1(Y, S).
@@ -880,8 +892,6 @@ capture(piece(knight,Color, N), Y, S) :- d1(piece(knight, Color, N), S), e3(Y, S
 capture(piece(knight,Color, N), Y, S) :- d1(piece(knight, Color, N), S), f2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- d1(piece(knight, Color, N), S), b2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- d1(piece(knight, Color, N), S), c3(Y, S).
-capture(piece(pawn,white, N), Y, S) :- d1(piece(pawn, white, N), S), c2(Y, S).
-capture(piece(pawn,white, N), Y, S) :- d1(piece(pawn, white, N), S), e2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- d2(piece(rook, Color, N), S), a2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- d2(piece(rook, Color, N), S), b2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- d2(piece(rook, Color, N), S), c2(Y, S).
@@ -921,6 +931,8 @@ capture(piece(knight,Color, N), Y, S) :- d2(piece(knight, Color, N), S), b3(Y, S
 capture(piece(knight,Color, N), Y, S) :- d2(piece(knight, Color, N), S), c4(Y, S).
 capture(piece(pawn,white, N), Y, S) :- d2(piece(pawn, white, N), S), c3(Y, S).
 capture(piece(pawn,white, N), Y, S) :- d2(piece(pawn, white, N), S), e3(Y, S).
+capture(piece(pawn,black, N), Y, S) :- d2(piece(pawn, black, N), S), c1(Y, S).
+capture(piece(pawn,black, N), Y, S) :- d2(piece(pawn, black, N), S), e1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- d3(piece(rook, Color, N), S), a3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- d3(piece(rook, Color, N), S), b3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- d3(piece(rook, Color, N), S), c3(Y, S).
@@ -1142,6 +1154,8 @@ capture(piece(knight,Color, N), Y, S) :- d7(piece(knight, Color, N), S), e5(Y, S
 capture(piece(knight,Color, N), Y, S) :- d7(piece(knight, Color, N), S), c5(Y, S).
 capture(piece(knight,Color, N), Y, S) :- d7(piece(knight, Color, N), S), b6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- d7(piece(knight, Color, N), S), b8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- d7(piece(pawn, white, N), S), c8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- d7(piece(pawn, white, N), S), e8(Y, S).
 capture(piece(pawn,black, N), Y, S) :- d7(piece(pawn, black, N), S), c6(Y, S).
 capture(piece(pawn,black, N), Y, S) :- d7(piece(pawn, black, N), S), e6(Y, S).
 capture(piece(rook,Color,N), Y, S) :- d8(piece(rook, Color, N), S), a8(Y, S).
@@ -1174,8 +1188,6 @@ capture(piece(knight,Color, N), Y, S) :- d8(piece(knight, Color, N), S), f7(Y, S
 capture(piece(knight,Color, N), Y, S) :- d8(piece(knight, Color, N), S), e6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- d8(piece(knight, Color, N), S), c6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- d8(piece(knight, Color, N), S), b7(Y, S).
-capture(piece(pawn,black, N), Y, S) :- d8(piece(pawn, black, N), S), c7(Y, S).
-capture(piece(pawn,black, N), Y, S) :- d8(piece(pawn, black, N), S), e7(Y, S).
 capture(piece(rook,Color,N), Y, S) :- e1(piece(rook, Color, N), S), a1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- e1(piece(rook, Color, N), S), b1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- e1(piece(rook, Color, N), S), c1(Y, S).
@@ -1206,8 +1218,6 @@ capture(piece(knight,Color, N), Y, S) :- e1(piece(knight, Color, N), S), f3(Y, S
 capture(piece(knight,Color, N), Y, S) :- e1(piece(knight, Color, N), S), g2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- e1(piece(knight, Color, N), S), c2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- e1(piece(knight, Color, N), S), d3(Y, S).
-capture(piece(pawn,white, N), Y, S) :- e1(piece(pawn, white, N), S), d2(Y, S).
-capture(piece(pawn,white, N), Y, S) :- e1(piece(pawn, white, N), S), f2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- e2(piece(rook, Color, N), S), a2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- e2(piece(rook, Color, N), S), b2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- e2(piece(rook, Color, N), S), c2(Y, S).
@@ -1247,6 +1257,8 @@ capture(piece(knight,Color, N), Y, S) :- e2(piece(knight, Color, N), S), c3(Y, S
 capture(piece(knight,Color, N), Y, S) :- e2(piece(knight, Color, N), S), d4(Y, S).
 capture(piece(pawn,white, N), Y, S) :- e2(piece(pawn, white, N), S), d3(Y, S).
 capture(piece(pawn,white, N), Y, S) :- e2(piece(pawn, white, N), S), f3(Y, S).
+capture(piece(pawn,black, N), Y, S) :- e2(piece(pawn, black, N), S), d1(Y, S).
+capture(piece(pawn,black, N), Y, S) :- e2(piece(pawn, black, N), S), f1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- e3(piece(rook, Color, N), S), a3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- e3(piece(rook, Color, N), S), b3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- e3(piece(rook, Color, N), S), c3(Y, S).
@@ -1468,6 +1480,8 @@ capture(piece(knight,Color, N), Y, S) :- e7(piece(knight, Color, N), S), f5(Y, S
 capture(piece(knight,Color, N), Y, S) :- e7(piece(knight, Color, N), S), d5(Y, S).
 capture(piece(knight,Color, N), Y, S) :- e7(piece(knight, Color, N), S), c6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- e7(piece(knight, Color, N), S), c8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- e7(piece(pawn, white, N), S), d8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- e7(piece(pawn, white, N), S), f8(Y, S).
 capture(piece(pawn,black, N), Y, S) :- e7(piece(pawn, black, N), S), d6(Y, S).
 capture(piece(pawn,black, N), Y, S) :- e7(piece(pawn, black, N), S), f6(Y, S).
 capture(piece(rook,Color,N), Y, S) :- e8(piece(rook, Color, N), S), a8(Y, S).
@@ -1500,8 +1514,6 @@ capture(piece(knight,Color, N), Y, S) :- e8(piece(knight, Color, N), S), g7(Y, S
 capture(piece(knight,Color, N), Y, S) :- e8(piece(knight, Color, N), S), f6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- e8(piece(knight, Color, N), S), d6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- e8(piece(knight, Color, N), S), c7(Y, S).
-capture(piece(pawn,black, N), Y, S) :- e8(piece(pawn, black, N), S), d7(Y, S).
-capture(piece(pawn,black, N), Y, S) :- e8(piece(pawn, black, N), S), f7(Y, S).
 capture(piece(rook,Color,N), Y, S) :- f1(piece(rook, Color, N), S), a1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- f1(piece(rook, Color, N), S), b1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- f1(piece(rook, Color, N), S), c1(Y, S).
@@ -1532,8 +1544,6 @@ capture(piece(knight,Color, N), Y, S) :- f1(piece(knight, Color, N), S), g3(Y, S
 capture(piece(knight,Color, N), Y, S) :- f1(piece(knight, Color, N), S), h2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- f1(piece(knight, Color, N), S), d2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- f1(piece(knight, Color, N), S), e3(Y, S).
-capture(piece(pawn,white, N), Y, S) :- f1(piece(pawn, white, N), S), e2(Y, S).
-capture(piece(pawn,white, N), Y, S) :- f1(piece(pawn, white, N), S), g2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- f2(piece(rook, Color, N), S), a2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- f2(piece(rook, Color, N), S), b2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- f2(piece(rook, Color, N), S), c2(Y, S).
@@ -1573,6 +1583,8 @@ capture(piece(knight,Color, N), Y, S) :- f2(piece(knight, Color, N), S), d3(Y, S
 capture(piece(knight,Color, N), Y, S) :- f2(piece(knight, Color, N), S), e4(Y, S).
 capture(piece(pawn,white, N), Y, S) :- f2(piece(pawn, white, N), S), e3(Y, S).
 capture(piece(pawn,white, N), Y, S) :- f2(piece(pawn, white, N), S), g3(Y, S).
+capture(piece(pawn,black, N), Y, S) :- f2(piece(pawn, black, N), S), e1(Y, S).
+capture(piece(pawn,black, N), Y, S) :- f2(piece(pawn, black, N), S), g1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- f3(piece(rook, Color, N), S), a3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- f3(piece(rook, Color, N), S), b3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- f3(piece(rook, Color, N), S), c3(Y, S).
@@ -1790,6 +1802,8 @@ capture(piece(knight,Color, N), Y, S) :- f7(piece(knight, Color, N), S), g5(Y, S
 capture(piece(knight,Color, N), Y, S) :- f7(piece(knight, Color, N), S), e5(Y, S).
 capture(piece(knight,Color, N), Y, S) :- f7(piece(knight, Color, N), S), d6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- f7(piece(knight, Color, N), S), d8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- f7(piece(pawn, white, N), S), e8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- f7(piece(pawn, white, N), S), g8(Y, S).
 capture(piece(pawn,black, N), Y, S) :- f7(piece(pawn, black, N), S), e6(Y, S).
 capture(piece(pawn,black, N), Y, S) :- f7(piece(pawn, black, N), S), g6(Y, S).
 capture(piece(rook,Color,N), Y, S) :- f8(piece(rook, Color, N), S), a8(Y, S).
@@ -1822,8 +1836,6 @@ capture(piece(knight,Color, N), Y, S) :- f8(piece(knight, Color, N), S), h7(Y, S
 capture(piece(knight,Color, N), Y, S) :- f8(piece(knight, Color, N), S), g6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- f8(piece(knight, Color, N), S), e6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- f8(piece(knight, Color, N), S), d7(Y, S).
-capture(piece(pawn,black, N), Y, S) :- f8(piece(pawn, black, N), S), e7(Y, S).
-capture(piece(pawn,black, N), Y, S) :- f8(piece(pawn, black, N), S), g7(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g1(piece(rook, Color, N), S), a1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g1(piece(rook, Color, N), S), b1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g1(piece(rook, Color, N), S), c1(Y, S).
@@ -1853,7 +1865,6 @@ capture(piece(king,Color), Y, S) :- g1(piece(king, Color), S), h2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g1(piece(knight, Color, N), S), h3(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g1(piece(knight, Color, N), S), e2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g1(piece(knight, Color, N), S), f3(Y, S).
-capture(piece(pawn,white, N), Y, S) :- g1(piece(pawn, white, N), S), f2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g2(piece(rook, Color, N), S), a2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g2(piece(rook, Color, N), S), b2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g2(piece(rook, Color, N), S), c2(Y, S).
@@ -1890,6 +1901,9 @@ capture(piece(knight,Color, N), Y, S) :- g2(piece(knight, Color, N), S), e1(Y, S
 capture(piece(knight,Color, N), Y, S) :- g2(piece(knight, Color, N), S), e3(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g2(piece(knight, Color, N), S), f4(Y, S).
 capture(piece(pawn,white, N), Y, S) :- g2(piece(pawn, white, N), S), f3(Y, S).
+capture(piece(pawn,white, N), Y, S) :- g2(piece(pawn, white, N), S), h3(Y, S).
+capture(piece(pawn,black, N), Y, S) :- g2(piece(pawn, black, N), S), f1(Y, S).
+capture(piece(pawn,black, N), Y, S) :- g2(piece(pawn, black, N), S), h1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g3(piece(rook, Color, N), S), a3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g3(piece(rook, Color, N), S), b3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g3(piece(rook, Color, N), S), c3(Y, S).
@@ -1928,7 +1942,9 @@ capture(piece(knight,Color, N), Y, S) :- g3(piece(knight, Color, N), S), e2(Y, S
 capture(piece(knight,Color, N), Y, S) :- g3(piece(knight, Color, N), S), e4(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g3(piece(knight, Color, N), S), f5(Y, S).
 capture(piece(pawn,white, N), Y, S) :- g3(piece(pawn, white, N), S), f4(Y, S).
+capture(piece(pawn,white, N), Y, S) :- g3(piece(pawn, white, N), S), h4(Y, S).
 capture(piece(pawn,black, N), Y, S) :- g3(piece(pawn, black, N), S), f2(Y, S).
+capture(piece(pawn,black, N), Y, S) :- g3(piece(pawn, black, N), S), h2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g4(piece(rook, Color, N), S), a4(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g4(piece(rook, Color, N), S), b4(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g4(piece(rook, Color, N), S), c4(Y, S).
@@ -1967,7 +1983,9 @@ capture(piece(knight,Color, N), Y, S) :- g4(piece(knight, Color, N), S), e3(Y, S
 capture(piece(knight,Color, N), Y, S) :- g4(piece(knight, Color, N), S), e5(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g4(piece(knight, Color, N), S), f6(Y, S).
 capture(piece(pawn,white, N), Y, S) :- g4(piece(pawn, white, N), S), f5(Y, S).
+capture(piece(pawn,white, N), Y, S) :- g4(piece(pawn, white, N), S), h5(Y, S).
 capture(piece(pawn,black, N), Y, S) :- g4(piece(pawn, black, N), S), f3(Y, S).
+capture(piece(pawn,black, N), Y, S) :- g4(piece(pawn, black, N), S), h3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g5(piece(rook, Color, N), S), a5(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g5(piece(rook, Color, N), S), b5(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g5(piece(rook, Color, N), S), c5(Y, S).
@@ -2006,7 +2024,9 @@ capture(piece(knight,Color, N), Y, S) :- g5(piece(knight, Color, N), S), e4(Y, S
 capture(piece(knight,Color, N), Y, S) :- g5(piece(knight, Color, N), S), e6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g5(piece(knight, Color, N), S), f7(Y, S).
 capture(piece(pawn,white, N), Y, S) :- g5(piece(pawn, white, N), S), f6(Y, S).
+capture(piece(pawn,white, N), Y, S) :- g5(piece(pawn, white, N), S), h6(Y, S).
 capture(piece(pawn,black, N), Y, S) :- g5(piece(pawn, black, N), S), f4(Y, S).
+capture(piece(pawn,black, N), Y, S) :- g5(piece(pawn, black, N), S), h4(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g6(piece(rook, Color, N), S), a6(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g6(piece(rook, Color, N), S), b6(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g6(piece(rook, Color, N), S), c6(Y, S).
@@ -2045,7 +2065,9 @@ capture(piece(knight,Color, N), Y, S) :- g6(piece(knight, Color, N), S), e5(Y, S
 capture(piece(knight,Color, N), Y, S) :- g6(piece(knight, Color, N), S), e7(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g6(piece(knight, Color, N), S), f8(Y, S).
 capture(piece(pawn,white, N), Y, S) :- g6(piece(pawn, white, N), S), f7(Y, S).
+capture(piece(pawn,white, N), Y, S) :- g6(piece(pawn, white, N), S), h7(Y, S).
 capture(piece(pawn,black, N), Y, S) :- g6(piece(pawn, black, N), S), f5(Y, S).
+capture(piece(pawn,black, N), Y, S) :- g6(piece(pawn, black, N), S), h5(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g7(piece(rook, Color, N), S), a7(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g7(piece(rook, Color, N), S), b7(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g7(piece(rook, Color, N), S), c7(Y, S).
@@ -2081,7 +2103,10 @@ capture(piece(knight,Color, N), Y, S) :- g7(piece(knight, Color, N), S), h5(Y, S
 capture(piece(knight,Color, N), Y, S) :- g7(piece(knight, Color, N), S), f5(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g7(piece(knight, Color, N), S), e6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g7(piece(knight, Color, N), S), e8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- g7(piece(pawn, white, N), S), f8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- g7(piece(pawn, white, N), S), h8(Y, S).
 capture(piece(pawn,black, N), Y, S) :- g7(piece(pawn, black, N), S), f6(Y, S).
+capture(piece(pawn,black, N), Y, S) :- g7(piece(pawn, black, N), S), h6(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g8(piece(rook, Color, N), S), a8(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g8(piece(rook, Color, N), S), b8(Y, S).
 capture(piece(rook,Color,N), Y, S) :- g8(piece(rook, Color, N), S), c8(Y, S).
@@ -2111,7 +2136,6 @@ capture(piece(king,Color), Y, S) :- g8(piece(king, Color), S), h8(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g8(piece(knight, Color, N), S), h6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g8(piece(knight, Color, N), S), f6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- g8(piece(knight, Color, N), S), e7(Y, S).
-capture(piece(pawn,black, N), Y, S) :- g8(piece(pawn, black, N), S), f7(Y, S).
 capture(piece(rook,Color,N), Y, S) :- h1(piece(rook, Color, N), S), a1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- h1(piece(rook, Color, N), S), b1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- h1(piece(rook, Color, N), S), c1(Y, S).
@@ -2138,7 +2162,6 @@ capture(piece(king,Color), Y, S) :- h1(piece(king, Color), S), g2(Y, S).
 capture(piece(king,Color), Y, S) :- h1(piece(king, Color), S), h2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- h1(piece(knight, Color, N), S), f2(Y, S).
 capture(piece(knight,Color, N), Y, S) :- h1(piece(knight, Color, N), S), g3(Y, S).
-capture(piece(pawn,white, N), Y, S) :- h1(piece(pawn, white, N), S), g2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- h2(piece(rook, Color, N), S), a2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- h2(piece(rook, Color, N), S), b2(Y, S).
 capture(piece(rook,Color,N), Y, S) :- h2(piece(rook, Color, N), S), c2(Y, S).
@@ -2169,6 +2192,7 @@ capture(piece(knight,Color, N), Y, S) :- h2(piece(knight, Color, N), S), f1(Y, S
 capture(piece(knight,Color, N), Y, S) :- h2(piece(knight, Color, N), S), f3(Y, S).
 capture(piece(knight,Color, N), Y, S) :- h2(piece(knight, Color, N), S), g4(Y, S).
 capture(piece(pawn,white, N), Y, S) :- h2(piece(pawn, white, N), S), g3(Y, S).
+capture(piece(pawn,black, N), Y, S) :- h2(piece(pawn, black, N), S), g1(Y, S).
 capture(piece(rook,Color,N), Y, S) :- h3(piece(rook, Color, N), S), a3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- h3(piece(rook, Color, N), S), b3(Y, S).
 capture(piece(rook,Color,N), Y, S) :- h3(piece(rook, Color, N), S), c3(Y, S).
@@ -2326,6 +2350,7 @@ capture(piece(king,Color), Y, S) :- h7(piece(king, Color), S), h8(Y, S).
 capture(piece(knight,Color, N), Y, S) :- h7(piece(knight, Color, N), S), g5(Y, S).
 capture(piece(knight,Color, N), Y, S) :- h7(piece(knight, Color, N), S), f6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- h7(piece(knight, Color, N), S), f8(Y, S).
+capture(piece(pawn,white, N), Y, S) :- h7(piece(pawn, white, N), S), g8(Y, S).
 capture(piece(pawn,black, N), Y, S) :- h7(piece(pawn, black, N), S), g6(Y, S).
 capture(piece(rook,Color,N), Y, S) :- h8(piece(rook, Color, N), S), a8(Y, S).
 capture(piece(rook,Color,N), Y, S) :- h8(piece(rook, Color, N), S), b8(Y, S).
@@ -2353,4 +2378,3 @@ capture(piece(king,Color), Y, S) :- h8(piece(king, Color), S), g8(Y, S).
 capture(piece(king,Color), Y, S) :- h8(piece(king, Color), S), h7(Y, S).
 capture(piece(knight,Color, N), Y, S) :- h8(piece(knight, Color, N), S), g6(Y, S).
 capture(piece(knight,Color, N), Y, S) :- h8(piece(knight, Color, N), S), f7(Y, S).
-capture(piece(pawn,black, N), Y, S) :- h8(piece(pawn, black, N), S), g7(Y, S).

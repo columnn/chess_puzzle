@@ -102,56 +102,56 @@ def generate_captures(fields, file):
         
         #queen
 
-        for i in range(8):
-            if(i == x):
-                continue
-            a = f"{chr(i+97)}{y+1}"
-            if a not in fields:
-                continue
-            s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
-            file.write(s)
-        for i in range(8):
-            if(i == y):
-                continue
-            a = f"{chr(x+97)}{i+1}"
-            if a not in fields:
-                continue
-            s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
-            file.write(s)
+        # for i in range(8):
+        #     if(i == x):
+        #         continue
+        #     a = f"{chr(i+97)}{y+1}"
+        #     if a not in fields:
+        #         continue
+        #     s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
+        #     file.write(s)
+        # for i in range(8):
+        #     if(i == y):
+        #         continue
+        #     a = f"{chr(x+97)}{i+1}"
+        #     if a not in fields:
+        #         continue
+        #     s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
+        #     file.write(s)
 
-        for i in range(1, 8):
-            x2 = x+i
-            y2 = y+i
-            if (0 <= x2 <=7 and 0 <= y2 <=7):
-                a = f"{chr(x2+97)}{y2+1}"
-                if a not in fields:
-                    continue
-                s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
-                file.write(s)
-            x2 = x+i
-            y2 = y-i
-            if (0 <= x2 <=7 and 0 <= y2 <=7):
-                a = f"{chr(x2+97)}{y2+1}"
-                if a not in fields:
-                    continue
-                s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
-                file.write(s)
-            x2 = x-i
-            y2 = y+i
-            if (0 <= x2 <=7 and 0 <= y2 <=7):
-                a = f"{chr(x2+97)}{y2+1}"
-                if a not in fields:
-                    continue
-                s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
-                file.write(s)
-            x2 = x-i
-            y2 = y-i
-            if(0 <= x2 <=7 and 0 <= y2 <=7):
-                a = f"{chr(x2+97)}{y2+1}"
-                if a not in fields:
-                    continue
-                s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
-                file.write(s)
+        # for i in range(1, 8):
+        #     x2 = x+i
+        #     y2 = y+i
+        #     if (0 <= x2 <=7 and 0 <= y2 <=7):
+        #         a = f"{chr(x2+97)}{y2+1}"
+        #         if a not in fields:
+        #             continue
+        #         s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
+        #         file.write(s)
+        #     x2 = x+i
+        #     y2 = y-i
+        #     if (0 <= x2 <=7 and 0 <= y2 <=7):
+        #         a = f"{chr(x2+97)}{y2+1}"
+        #         if a not in fields:
+        #             continue
+        #         s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
+        #         file.write(s)
+        #     x2 = x-i
+        #     y2 = y+i
+        #     if (0 <= x2 <=7 and 0 <= y2 <=7):
+        #         a = f"{chr(x2+97)}{y2+1}"
+        #         if a not in fields:
+        #             continue
+        #         s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
+        #         file.write(s)
+        #     x2 = x-i
+        #     y2 = y-i
+        #     if(0 <= x2 <=7 and 0 <= y2 <=7):
+        #         a = f"{chr(x2+97)}{y2+1}"
+        #         if a not in fields:
+        #             continue
+        #         s = f"capture(piece(queen,Color), Y, S) :- {field}(piece(queen, Color), S), {a}(Y, S).\n"
+        #         file.write(s)
 
         #pawn
         q_white = [(-1,1),(1,1)]
@@ -159,9 +159,7 @@ def generate_captures(fields, file):
             u = x + i
             v = y + j
             pass
-            if not(1 <= u <= 6):
-                continue
-            if not(1 <= v <= 6):
+            if not(1 <= y <= 6):
                 continue
             a = f"{chr(u+97)}{v+1}"
             if a not in fields:
@@ -174,9 +172,7 @@ def generate_captures(fields, file):
             u = x + i
             v = y + j
             pass
-            if not(1 <= u <= 6):
-                continue
-            if not(1 <= v <= 6):
+            if not(1 <= y <= 6):
                 continue
             a = f"{chr(u+97)}{v+1}"
             if a not in fields:
@@ -252,10 +248,18 @@ def generate_edges(fields, file):
 
 def main():
     f = ['b5','b6','b7','c5','c6','c7','d4','d5','d6','d8','e5','e6','f4','f6','f7']
-    #f = ['a1','a2','a3','a4','a5','a6','a7','a8']
+    #f = ['a1','a2','a3','a4','a5','a6','a7','a8','a1','a2','a3','a4','a5','a6','a7','a8','a1','a2','a3','a4','a5','a6','a7','a8'
+    #   ,'a1','a2','a3','a4','a5','a6','a7','a8','a1','a2','a3','a4','a5','a6','a7','a8']
     #f = ['a1','a8','h1','h8']
     file = open('predykaty.txt', 'w')
 
+    all_fields = []
+    for i in range(97, 105):
+        for j in range(1, 9):
+            all_fields.append(f"{chr(i)}{j}")
+
+    print(all_fields)
+    
     generate_fields(f, file)
     file.write('\n')
 
